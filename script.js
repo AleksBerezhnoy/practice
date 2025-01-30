@@ -1,38 +1,24 @@
-const btns = document.querySelectorAll('button'),
-      overlay = document.querySelector('.overlay');
-// btn.onclick = function() {
-//     alert(10);
-// };
+// console.log(document.head);
+// console.log(document.documentElement); // Html в консоль
+// console.log(document.body.childNodes); // Все node узлы из body в псевдомассиве
+// console.log(document.body.firstChild); // Первый тестовый нод
+// console.log(document.body.firstElementChild); // Первый элемент
+// console.log(document.body.lastChild);
 
-// btn.addEventListener('click', () => { // Событие при клике
-//     alert(10);
-// });
-// btn.addEventListener('mouseenter', (e) => { // При наведении на кнопку
-//     console.log(e.target);
-//     e.target.remove();
-    
-// });
-let i = 0;
-const deletElement = (e) => { // Событие при клике
-    console.log(e.target);
-    console.log(e.type);
-    // i++;
-    // if(i = 1) {
-    //     btn.removeEventListener('click', deletElement);
-    // }
-};
+// console.log(document.querySelector('#current').parentNode); // Получить родителя
+// console.log(document.querySelector('#current').parentNode.parentNode); // Получить родителя родителя
+// console.log(document.querySelector('#current').parentElement.parentElement); // Получить родителя родителя
 
-// btn.addEventListener('click', deletElement);
-// overlay.addEventListener('click', deletElement);
 
-btns.forEach(btn => { // Перебор элементов
-    btn.addEventListener('click', deletElement, {once: true}) // Объект once - нажать один раз
-});
+// атрибут из HTML //nextSibling - Следующий сосед node, previousSibling - наоборот
+// console.log(document.querySelector('[data-current="3"]').previousSibling);
 
-const link = document.querySelector('a');
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling); //Следующий сосед элемент
 
-link.addEventListener('click', function(event){
-    event.preventDefault(); // Удаление стилей браузера
-    console.log(event.target);
-});
 
+for (let node of document.body.childNodes) {
+    if (node.nodeName == '#text') {
+        continue;
+    }
+    console.log(node);
+}
